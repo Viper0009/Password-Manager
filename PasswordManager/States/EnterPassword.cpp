@@ -10,8 +10,8 @@ timer(states.r.fact.getTextBox(Vector2f(30vw, 10vh), L"", Vector2f(35vw, 90vh - 
 {
 	output.setTextFillColor(states.r.colors.outputText);
 	enterButton.setEnable(false);
-	enterButton.getRect().setTextOffset(Vector2f(0, -0.5));
-	answerQuestionButton.getRect().setTextOffset(Vector2f(0, -0.1));
+	//enterButton.getRect().setTextOffset(Vector2f(0, -0.5));
+	//answerQuestionButton.getRect().setTextOffset(Vector2f(0, -0.1));
 	input.getRect().setStringSizeLimit(states.characterInputLimit);
 	timer.setFillColor(Color::Transparent);
 }

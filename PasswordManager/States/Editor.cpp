@@ -10,7 +10,7 @@ void States::Editor::EnterPassword::refresh(){
 	input.getRect().setString(L"");
 	output.setTextFillColor(states.r.colors.outputText);
 	enter.setEnable(false);
-	enter.getRect().setTextOffset(Vector2f(0, -0.5));
+	//enter.getRect().setTextOffset(Vector2f(0, -0.5));
 	input.getRect().setStringSizeLimit(states.characterInputLimit);
 }
 void States::Editor::EnterPassword::check(Event& event){
@@ -152,7 +152,7 @@ back(states.r.fact.getButton({37.5vw, 10vh}, L"Назад", {52.5vw, 85vh}))
 	inputTitle.getRect().setStringSizeLimit(states.characterInputLimit);
 	inputPassword.getRect().setStringSizeLimit(states.characterInputLimit);
 	repeatPassword.getRect().setStringSizeLimit(states.characterInputLimit);
-	enter.getRect().setTextOffset({ 0, -0.5 });
+	//enter.getRect().setTextOffset({ 0, -0.5 });
 	addQuestion.getRect().setCharacterSize(40px);
 	questionPreview.setCharacterSize(30px);
 }

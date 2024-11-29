@@ -5,7 +5,7 @@ States::MainMenu::MainMenu(States& states) :
 	startButton(states.r.fact.getButton(Vector2f(35vw, 15vh), L"Начать", Vector2f(10vw, 75vh))),
 	editorButton(states.r.fact.getButton(Vector2f(35vw, 15vh), L"Редактор", Vector2f(55vw, 75vh)))
 {
-	startButton.getRect().setTextOffset(Vector2f(0, -0.5));
+	//startButton.getRect().setTextOffset(Vector2f(0, -0.5));
 }
 
 void States::MainMenu::check(Event& event)

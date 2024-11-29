@@ -1,5 +1,5 @@
 #include "TextBox.h"
-
+#include "iostream"
 void TextBox::align()
 {
 	_box.setPosition(_pos);
@@ -40,15 +40,20 @@ void TextBox::align()
 	}
 	_text.setScale(_text.getScale().x * _scale.x, _text.getScale().y * _scale.y);
 	_box.setScale(_scale);
+
+	Uint32 br = sf::String(L'\n')[0];
+	int linesCount = (std::count(std::begin(_text.getString()), std::end(_text.getString()), br) + 1);
+	float textHeight = (_text.getCharacterSize() * _text.getScale().y * linesCount + (linesCount - 1) * _text.getLineSpacing());
+
 	switch (_textAlign) {
 	case Align::Center: {
 		_text.setPosition(
 			_pos.x + boxRect.width * 0.5 - _text.getGlobalBounds().width * (0.5 - _textOffset.x),
-			_pos.y + boxRect.height * 0.5 - _text.getGlobalBounds().height * (0.5 - _textOffset.y));
+			_pos.y + boxRect.height * 0.5 - textHeight * (0.5 - _textOffset.y));
 	} break;
 	case Align::Left: {
 		_text.setPosition(_pos.x + boxRect.width * 0.05 + _text.getGlobalBounds().width * _textOffset.x,
-			_pos.y + boxRect.height * 0.05 + _text.getGlobalBounds().height * _textOffset.y);
+			_pos.y + boxRect.height * 0.05 + textHeight * _textOffset.y);
 	} break;
 	}
 }

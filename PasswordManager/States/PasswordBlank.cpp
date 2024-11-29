@@ -8,7 +8,7 @@ States::PasswordBlank::PasswordBlank(States& states) :
 	copyButton(states.r.fact.getButton(Vector2f(37.5vw, 10vh), L"Копировать", Vector2f(52.5vw, 57.5vh))),
 	backButton(states.r.fact.getButton(Vector2f(70vw, 15vh), L"Назад", Vector2f(15vw, 75vh)))
 {
-	showPasswordButton.getRect().setTextOffset(Vector2f(0, -0.5));
+	//showPasswordButton.getRect().setTextOffset(Vector2f(0, -0.5));
 }
 
 void States::PasswordBlank::refresh()

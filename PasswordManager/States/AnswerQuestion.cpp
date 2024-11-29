@@ -17,6 +17,7 @@ States::AnswerQuestion::AnswerQuestion(States& states) :
 	(states.r.fact.getButton(Vector2f(35vw, 10vh), L"", Vector2f(52.5vw, 57.5vh)))
 	}
 {
+	question.setCharacterSize(40px);
 	output.setTextFillColor(states.r.colors.outputText);
 	input.getRect().setStringSizeLimit(states.characterInputLimit);
 }
@@ -28,6 +29,7 @@ void States::AnswerQuestion::refresh()
 		switch (states.currentBlank->qt) {
 		case Question::Enter: {
 			attempts = 3;
+			input.getRect().setString(L"");
 			output.setString(L"У вас есть " + std::to_wstring(attempts) + L" попытки");
 			output.setPosition(Vector2f(15vw, 65vh));
 		} break;
